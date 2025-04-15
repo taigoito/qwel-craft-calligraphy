@@ -1,12 +1,12 @@
-# QWEL CRAFT TEMPLATE | Created by ― QWEL.DESIGN
+# Calligraphy | Created by ― QWEL.DESIGN
 
-これは、[QWEL.DESIGN](https://qwel.design/) の作品集 Creative Crafts の作品テンプレートです。
+日本語散文形態 (詩) の縦書きに適格なフォントを比較して選択するために作ったもの。
 
-[https://creative.qwel.design/](https://creative.qwel.design/)
+[https://qwel.design/creative/calligraphy/](https://qwel.design/creative/calligraphy/)
 
 ---
 
-## ライセンス
+## ライセンス  
 
 本リポジトリのコード (HTML/CSS/JS/PHP) は MIT ライセンスで公開しています。  
 著作権表記 (&copy;QWEL.DESIGN) を残すかぎり、自由にご利用・改変いただけます。

@@ -3,12 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Title Here] | QWEL in Action</title>
+    <title>Calligraphy | QWEL in Action</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Noto+Sans:wght@100..900&family=Noto+Serif:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Noto+Sans+JP:wght@500&family=Noto+Serif+JP:wght@500&family=Zen+Kaku+Gothic+New:wght@500&family=Zen+Maru+Gothic:wght@500&family=Zen+Old+Mincho:wght@500&family=Kosugi+Maru&family=Shippori+Mincho:wght@500&family=Klee+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./favicon.ico">
+    <style>
+      .container {
+        width: fit-content;
+        margin: 6rem auto;
+        font-weight: 500;
+        font-size: 15pt;
+      }
+
+      .container::before {
+        content: attr(style);
+        display: block;
+        margin-bottom: 1em;
+      }
+
+      p {
+        margin: 0;
+        writing-mode: vertical-rl;
+        /*line-height: 1.8;*/
+        line-height: 2.25;
+        text-indent: 2em;
+        letter-spacing: calc(1em / 8);
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -16,17 +38,28 @@
       <ul class="breadcrumb">
         <li class="breadcrumb__item"><a href="https://qwel.design/">QWEL in Action</a></li>
         <li class="breadcrumb__item"><a href="../">Creative Crafts</a></li>
-        <li class="breadcrumb__item breadcrumb__item--current"><span>[Title Here]</span></li>
+        <li class="breadcrumb__item breadcrumb__item--current"><span>Calligraphy</span></li>
       </ul>
     </header>
     <main class="main">
-      <h2 class="main__title">[Title Here] | Created by <span> ― QWEL.DESIGN</span></h2>
+      <h2 class="main__title">Calligraphy | Created by <span> ― QWEL.DESIGN</span></h2>
       <ul class="main__list">
-        <li class="main__listItem--spec">[Spec Here]</li>
+        <li class="main__listItem--spec">日本語散文形態 (詩) の縦書きに適格なフォントを比較して選択するために作ったもの</li>
+        <li class="main__listItem--spec">作者: カール・ブッセ、訳: 上田敏 (翻訳詩集: 海潮音より)
+        </li>
       </ul>
-      
-
-
+      <div id="app">
+        <div class="container" v-for="font in fonts" :style="`font-family: ${font};`">
+          <p>山のあなた
+            <br>&nbsp;
+            <br>山のあなたの空遠く
+            <br>「幸ひ」住むと人のいふ。
+            <br>噫、われひとと尋めゆきて、
+            <br>涙さしぐみ、かへりきぬ。
+            <br>山のあなたになほ遠く
+            <br>「幸ひ」住むと人のいふ。</p>
+        </div>
+      </div>
     </main>
     <footer id="footer" class="footer">
       <div class="footer__inner">
@@ -42,5 +75,27 @@
       </div>
     </footer>
     <script src="./init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0/vue.global.js"></script>
+    <script>
+      const data = {
+        data() {
+          return {
+            fonts: [
+              "Noto Sans JP",
+              "Zen Kaku Gothic New",
+              "Zen Maru Gothic",
+              "Kosugi Maru",
+              "Noto Serif JP",
+              "Shippori Mincho",
+              "Zen Old Mincho",
+              "Klee One"
+            ]
+          }
+        }
+      }
+
+      Vue.createApp(data).mount('#app');
+
+    </script>
   </body>
 </html>
